@@ -8,6 +8,6 @@ import HtmlToJsx from './HtmlToJsx.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Greeting />
+    <App />
   </StrictMode>,
 )
