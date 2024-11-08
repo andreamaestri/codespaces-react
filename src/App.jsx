@@ -30,7 +30,7 @@ export default function App() {
 				Hi! My name is {name}, and I&#039;m a {role}!
 			</h1>
 			<article>
-				<h2>My favourite food is...</h2>
+				<h2>My favourite foods are...</h2>
 				<List favFoods={favFoods} />
 			</article>
 		</div>
