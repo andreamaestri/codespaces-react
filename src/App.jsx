@@ -1,4 +1,3 @@
-
 /* Using the ternary operator
   *function List(props) {
 	*return (
@@ -10,7 +9,7 @@
 	);
 } */
 
-// Using the && operator
+/* Using the && operator
 function List(props) {
   return (
     <ul>
@@ -19,18 +18,30 @@ function List(props) {
       })}
     </ul>
   )
-}  
+}  */
 
+// Using if, if/else, switch statements
+
+function List(props) {
+	if (!props.favFoods) {
+		return <div>Loading...</div>;
+	}
+
+	if (<props className="favFoods length"></props> === 0) {
+		return <div>There are no foods in the list!</div>;
+	}
+
+	return (
+		<ul>
+			{props.favFoods.map((favFood) => {
+				return <li key={favFood}>{favFood}</li>;
+			})}
+		</ul>
+	);
+}
 
 export default function App() {
-	const favFoods = [
-		"Pizza",
-		"Lasagna",
-		"Roast",
-		"Chips",
-		"Tom Yum",
-		"Savoy Cabbage Stew",
-	];
+	const favFoods = [];
 	const name = "Andrea";
 	const role = "React Developer";
 
