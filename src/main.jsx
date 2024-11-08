@@ -4,9 +4,10 @@ import Greeting from "./Greeting.jsx";
 import FaveFood from "./FaveFood.jsx";
 import './index.css'
 import App from './App.jsx'
+import HtmlToJsx from './HtmlToJsx.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <FaveFood />
+    <Greeting />
   </StrictMode>,
 )
