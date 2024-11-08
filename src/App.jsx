@@ -1,12 +1,8 @@
-function ListItem(props) {
-	return <li>{props.favFood}</li>;
-}
-
 function List(props) {
 	return (
 		<ul>
 			{props.favFoods.map((favFood) => {
-				return <ListItem key={favFood} favFood={favFood} />;
+				return favFood.startsWith("L") ? <li key={favFood}>{favFood}</li> : null;
 			})}
 		</ul>
 	);
