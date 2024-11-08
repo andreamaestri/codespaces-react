@@ -27,7 +27,7 @@ function List(props) {
 		return <div>Loading...</div>;
 	}
 
-	if (<props className="favFoods length"></props> === 0) {
+	if (props.favFoods.length === 0) {
 		return <div>There are no foods in the list!</div>;
 	}
 
