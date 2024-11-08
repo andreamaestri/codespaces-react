@@ -1,12 +1,26 @@
-function List(props) {
-	return (
+
+/* Using the ternary operator
+  *function List(props) {
+	*return (
 		<ul>
 			{props.favFoods.map((favFood) => {
 				return favFood.startsWith("L") ? <li key={favFood}>{favFood}</li> : null;
 			})}
 		</ul>
 	);
-}
+} */
+
+// Using the && operator
+function List(props) {
+  return (
+    <ul>
+      {props.favFoods.map((favFood) => {
+        return favFood.startsWith("L") && <li key={favFood}>{favFood}</li>;
+      })}
+    </ul>
+  )
+}  
+
 
 export default function App() {
 	const favFoods = [
