@@ -75,7 +75,7 @@ function Button({ text = "Click Me!", color = "blue", fontSize = 12 }) {
 
 // Using .defaultProps
 
-function Button({ text, color, fontSize}) {
+/* function Button({ text, color, fontSize}) {
 	const buttonStyle = {
 		color: color,
 		fontSize: fontSize + "px"
@@ -93,22 +93,41 @@ Button.defaultProps = {
 export default function App() {
 	const favFoods = [];
 	const name = "Andrea";
-	const role = "React Developer";
+	const role = "React Developer"; */
 
-	return (
-		<div>
-			<h1>
-				Hi! My name is {name}, and I&#039;m a {role}!
-			</h1>
-			<article>
-				<h2>My favourite foods are...</h2>
-				<List favFoods={favFoods} />
-				<div>
-					<Button />
-					<Button text="Don't Click Me!" color="red" />
-					<Button fontSize={20} />
-				</div>
-			</article>
-		</div>
-	);
-}
+	function Button({ text = "Click Me!", color = "blue", fontSize = 12, handleClick }) {
+		const buttonStyle = {
+			color: color,
+			fontSize: `${fontSize}px`
+		};
+		return (
+			<button onClick={handleClick} style={buttonStyle} type="button">
+				{text}
+			</button>
+		);
+	}
+	
+	export default function App() {
+		const favFoods = [];
+		const name = "Andrea";
+		const role = "React Developer";
+	
+		const handleButtonClick = () => {
+			window.location.href = "https://www.google.com";
+		};
+	
+		return (
+			<div>
+				<h1>
+					Hi! My name is {name}, and I&#039;m a {role}!
+				</h1>
+				<article>
+					<h2>My favourite foods are...</h2>
+					<List favFoods={favFoods} />
+					<div>
+						<Button handleClick={handleButtonClick} />
+					</div>
+				</article>
+			</div>
+		);
+	}
