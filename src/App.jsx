@@ -46,6 +46,13 @@ function Button() {
 	return <button>Click Me!</button>;
 }
 
+function Button2() {
+	return (
+	  <button>Don't Click Me!</button>
+	);
+  }
+  
+
 export default function App() {
 	const favFoods = [];
 	const name = "Andrea";
@@ -61,7 +68,7 @@ export default function App() {
 				<List favFoods={favFoods} />
 				<div>
 					<Button />
-					<Button />
+					<Button2 />
 					<Button />
 				</div>
 			</article>
