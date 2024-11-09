@@ -42,16 +42,27 @@ function List(props) {
 
 // Using props in React
 
-function Button() {
-	return <button>Click Me!</button>;
-}
-
-function Button2() {
-	return (
-	  <button>Don't Click Me!</button>
-	);
-  }
+/* function Button(props) {
+	const buttonStyle = {
+	  color: props.color,
+	  fontSize: props.fontSize + 'px'
+	};
   
+	return (
+	  <button style={buttonStyle}>{props.text}</button>
+	);
+  } */
+
+//Prop destructing
+
+function Button({ text, color, fontSize }) {
+	const buttonStyle = {
+		color: color,
+		fontSize: fontSize + "px",
+	};
+
+	return <button style={buttonStyle}>{text}</button>;
+}
 
 export default function App() {
 	const favFoods = [];
@@ -67,9 +78,9 @@ export default function App() {
 				<h2>My favourite foods are...</h2>
 				<List favFoods={favFoods} />
 				<div>
-					<Button />
-					<Button2 />
-					<Button />
+					<Button text="Click Me!" color="blue" fontSize={12} />
+					<Button text="Don't Click Me!" color="red" fontSize={12} />
+					<Button text="Click Me!" color="blue" fontSize={20} />
 				</div>
 			</article>
 		</div>
