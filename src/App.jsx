@@ -40,6 +40,12 @@ function List(props) {
 	);
 }
 
+// Using props in React
+
+function Button() {
+	return <button>Click Me!</button>;
+}
+
 export default function App() {
 	const favFoods = [];
 	const name = "Andrea";
@@ -53,6 +59,11 @@ export default function App() {
 			<article>
 				<h2>My favourite foods are...</h2>
 				<List favFoods={favFoods} />
+				<div>
+					<Button />
+					<Button />
+					<Button />
+				</div>
 			</article>
 		</div>
 	);
