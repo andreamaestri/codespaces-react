@@ -63,7 +63,7 @@ function List(props) {
 
 	return <button style={buttonStyle}>{text}</button>;
 } */
-
+/* Default props
 function Button({ text = "Click Me!", color = "blue", fontSize = 12 }) {
 	const buttonStyle = {
 		color: color,
@@ -71,7 +71,24 @@ function Button({ text = "Click Me!", color = "blue", fontSize = 12 }) {
 	};
 
 	return <button style={buttonStyle}>{text}</button>;
+} */
+
+// Using .defaultProps
+
+function Button({ text, color, fontSize}) {
+	const buttonStyle = {
+		color: color,
+		fontSize: fontSize + "px"
+	};
+
+	return <button style={buttonStyle}>{text}</button>;
 }
+
+Button.defaultProps = {
+	text: "Click Me!",
+	color: "blue",
+	fontSize: 12
+};
 
 export default function App() {
 	const favFoods = [];
