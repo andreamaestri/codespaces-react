@@ -55,7 +55,16 @@ function List(props) {
 
 //Prop destructing
 
-function Button({ text, color, fontSize }) {
+/* function Button({ text, color, fontSize }) {
+	const buttonStyle = {
+		color: color,
+		fontSize: fontSize + "px",
+	};
+
+	return <button style={buttonStyle}>{text}</button>;
+} */
+
+function Button({ text = "Click Me!", color = "blue", fontSize = 12 }) {
 	const buttonStyle = {
 		color: color,
 		fontSize: fontSize + "px",
@@ -78,9 +87,9 @@ export default function App() {
 				<h2>My favourite foods are...</h2>
 				<List favFoods={favFoods} />
 				<div>
-					<Button text="Click Me!" color="blue" fontSize={12} />
-					<Button text="Don't Click Me!" color="red" fontSize={12} />
-					<Button text="Click Me!" color="blue" fontSize={20} />
+					<Button />
+					<Button text="Don't Click Me!" color="red" />
+					<Button fontSize={20} />
 				</div>
 			</article>
 		</div>
