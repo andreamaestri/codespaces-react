@@ -95,6 +95,8 @@ export default function App() {
 	const name = "Andrea";
 	const role = "React Developer"; */
 
+//Functions as Props
+/*
 	function Button({ text = "Click Me!", color = "blue", fontSize = 12, handleClick }) {
 		const buttonStyle = {
 			color: color,
@@ -105,29 +107,52 @@ export default function App() {
 				{text}
 			</button>
 		);
-	}
-	
-	export default function App() {
-		const favFoods = [];
-		const name = "Andrea";
-		const role = "React Developer";
-	
-		const handleButtonClick = () => {
-			window.location.href = "https://www.google.com";
-		};
-	
-		return (
-			<div>
-				<h1>
-					Hi! My name is {name}, and I&#039;m a {role}!
-				</h1>
-				<article>
-					<h2>My favourite foods are...</h2>
-					<List favFoods={favFoods} />
-					<div>
-						<Button handleClick={handleButtonClick} />
-					</div>
-				</article>
-			</div>
-		);
-	}
+	} */
+
+// Passing url to Button
+function Button({
+	text = "Click Me!",
+	color = "blue",
+	fontSize = 12,
+	handleClick,
+}) {
+	const buttonStyle = {
+		color: color,
+		fontSize: `${fontSize}px`,
+	};
+
+	return (
+		<button onClick={handleClick} style={buttonStyle} type="button">
+			{text}
+		</button>
+	);
+}
+
+export default function App() {
+	const favFoods = [];
+	const name = "Andrea";
+	const role = "React Developer";
+
+	const handleButtonClick = (url) => {
+		window.location.href = url;
+	};
+
+	return (
+		<div>
+			<h1>
+				Hi! My name is {name}, and I&#039;m a {role}!
+			</h1>
+			<article>
+				<h2>My favourite foods are...</h2>
+				<List favFoods={favFoods} />
+				<div>
+					<Button
+						handleClick={() =>
+							handleButtonClick("https://www.theodinproject.com")
+						}
+					/>
+				</div>
+			</article>
+		</div>
+	);
+}
